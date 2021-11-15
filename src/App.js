@@ -11,6 +11,8 @@ import styled from 'styled-components';
 import axios from 'axios';
 import Cart from './cart/Cart.js';
 import MainNav from './include/Nav.js';
+import Jumbotron from './include/Jumbotron';
+import Login from './include/Login';
 
 import { Link, Route, Switch, useHistory } from 'react-router-dom';
 
@@ -30,7 +32,7 @@ function App() {
     <Switch>
       
       <Route exact path="/">
-        <Jumbotron></Jumbotron>
+        <Jumbotron />
           <div className="container mt-5 mb-5">
 
             <stockContext.Provider value={ stock }>
@@ -74,6 +76,9 @@ function App() {
         <Cart />
       </Route>
 
+      <Route path="/login">
+        <Login />
+      </Route>
     
 
       {/* <Route path="/" component={Modal}></Route> */}
@@ -102,24 +107,13 @@ function App() {
     )
   }
 
-  function Jumbotron() {
-    return (
-      <div className="jumbotron">
-        <h1>20% Season Off</h1>
-        <p>this is a simple hero unit, a simple jumbotron</p>
-        <p>
-          <Button variant="primary">Learn more</Button>
-        </p>
-      </div>
-    )
-  }
-
   function Test() {
     let stock = useContext(stockContext);
     return (
       <p>재고 : {stock[0]}</p>
     )
   }
+
 
 
 export default App;

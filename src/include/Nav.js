@@ -41,10 +41,14 @@ function MainNav() {
                 <li><Link as={Link} to="/">ACCESSORIES</Link></li>
             </ul>
             <ul className={ toggle ? "nav-icons active" : "nav-icons" }>
-            <Link as={Link} to="/"><FontAwesomeIcon className="nav-icon" icon={faUser}></FontAwesomeIcon></Link>
-            <Link as={Link} to="/cart"><FontAwesomeIcon className="nav-icon" icon={faShoppingCart}></FontAwesomeIcon></Link>
-                <i></i>
+                <Link as={Link} to="/cart"><FontAwesomeIcon className="nav-icon" icon={faShoppingCart}></FontAwesomeIcon></Link>
+                <Link as={Link} to="/login"><FontAwesomeIcon className="nav-icon" icon={faUser}></FontAwesomeIcon></Link>
+                    {/* <ul className="user">
+                        <li><Link as={Link} to="/">JOIN</Link></li>
+                        <li><Link as={Link} to="/">LOGIN</Link></li>
+                    </ul> */}
             </ul>
+
             <button class="nav-toggleBtn" onClick={showToggle}>
                 <FontAwesomeIcon className="nav-toggle" icon={faBars}></FontAwesomeIcon>
             </button>
